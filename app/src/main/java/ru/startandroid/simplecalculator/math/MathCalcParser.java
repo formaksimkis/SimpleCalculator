@@ -1,6 +1,7 @@
 package ru.startandroid.simplecalculator.math;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

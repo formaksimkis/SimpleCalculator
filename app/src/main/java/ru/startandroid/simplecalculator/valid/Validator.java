@@ -9,10 +9,10 @@ import ru.startandroid.simplecalculator.exception.BracketsMissmatchException;
 import ru.startandroid.simplecalculator.exception.UnsupportedSymbolsInMathExpression;
 
 public class Validator {
-    private static final Pattern PATTERN_NUM_OP_NUM = Pattern.compile("(\\d+\\.?\\d*)(\\*?\\/?\\+?\\-?\\^?)(\\d+\\.?\\d*)");
-    private static final Pattern PATTERN_NUM_IN_BRACKETS = Pattern.compile("(\\(\\-?\\d+\\.?\\d*\\))");
-    private static final Pattern PATTERN_BAD_NUM = Pattern.compile("(\\d+\\.\\d+\\.)");
-    private static final Pattern PATTERN_WRONG_SYMB_COMBS = Pattern.compile("(\\)\\d)|(\\)\\()|(\\d\\()|(\\([\\-|\\+|\\*|\\/|\\^]\\d+\\.?\\d*(?!\\)|\\.)\\D)");
+    private Pattern PATTERN_NUM_OP_NUM = Pattern.compile("(\\d+\\.?\\d*)(\\*?\\/?\\+?\\-?\\^?)(\\d+\\.?\\d*)");
+    private Pattern PATTERN_NUM_IN_BRACKETS = Pattern.compile("(\\(\\-?\\d+\\.?\\d*\\))");
+    private Pattern PATTERN_BAD_NUM = Pattern.compile("(\\d+\\.\\d+\\.)");
+    private Pattern PATTERN_WRONG_SYMB_COMBS = Pattern.compile("(\\)\\d)|(\\)\\()|(\\d\\()|(\\(\\D\\()|(\\)\\D\\))|(\\([\\-|\\+|\\*|\\/|\\^]\\d+\\.?\\d*(?!\\)|\\.)\\D)");
 
     private static final Set<Character> OPERATIONS;
     static {
